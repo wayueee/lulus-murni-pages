@@ -55,7 +55,7 @@
         <div
           v-for="item in faqs"
           :key="item"
-          class="bg-white pb-[16px] lg:px-[4px] xl:px-[4px]"
+          class="bg-white pb-[16px] lg:px-[8px] xl:px-[4px]"
         >
           <div
             class="flex justify-between items-center cursor-pointer"
@@ -84,7 +84,7 @@
               :key="option"
             >
               <div v-if="item.name === 'Partnership'" class="flex gap-2 pt-2">
-                <img :src="option.image" :alt="option.name" />
+                <img :src="`/lulus-murni-pages${option.image}`" :alt="option.name" />
                 <a :href="option.link">{{ option.nameLink }}</a>
               </div>
               <div @click="option.isOpen = !option.isOpen">
@@ -97,7 +97,7 @@
                     v-for="itemOption in option.option"
                     :key="itemOption"
                   >
-                    <img :src="itemOption.imageMobile" :alt="itemOption.name" />
+                    <img :src="`/lulus-murni-pages${itemOption.imageMobile}`" :alt="itemOption.name" />
                     <h1 class="mt-1 cursor-pointer">{{ itemOption.name }}</h1>
                   </div>
                 </div>
@@ -105,9 +105,9 @@
             </div>
           </div>
           <div class="">
-            <div class="">
+            <div class="shadow-md">
               <div
-                class="hidden lg:block shadow-md top-14 rounded-lg absolute"
+                class="hidden lg:block top-14 rounded-lg absolute"
                 v-if="item.isOpen"
                 :class="
                   item.name === 'Program Kami'
@@ -129,16 +129,16 @@
                     :key="option"
                   >
                     <div v-if="item.name === 'Partnership'" class="flex gap-2">
-                      <img :src="option.image" :alt="option.name" />
+                      <img :src="`/lulus-murni-pages${option.image}`" :alt="option.name" />
                       <a :href="option.link">{{ option.nameLink }}</a>
                     </div>
-                    <div class="" @click="option.isOpen = !option.isOpen">
+                    <div class="relative" @click="option.isOpen = !option.isOpen">
                       <div
-                        class="flex gap-2 mb-[16px]"
+                        class="flex gap-2 mb-[16px] relative"
                         :class="item.name === 'Program Kami' ? 'pt-2' : ''"
                       >
                         <h1
-                          class="cursor-pointer hover:text-[#249CD9] focus:text-[#249CD9]"
+                          class="cursor-pointer lg:text-[12px] xl:text-[14px] hover:text-[#249CD9] focus:text-[#249CD9]"
                         >
                           {{ option.name }}
                         </h1>
@@ -152,36 +152,39 @@
                             alt="vector"
                           />
                         </div>
-                        <div
-                          class="flex gap-[28px] border-l-2 px-[32px] absolute lg:left-[210px] xl:left-[320px]"
-                          v-if="option.isOpen"
-                        >
+                        <div class="relative">
                           <div
-                            :class="option.name === 'Tryout' ? 'mb-[68px]' : ''"
-                            v-for="itemOption in option.option"
-                            :key="itemOption"
+                            class="flex border-l-2 absolute ml-[48px] pl-[32px] "
+                            v-if="option.isOpen"
                           >
-                            <img
-                              :src="itemOption.imageDesktop"
-                              :alt="itemOption.name"
-                            />
-                            <p class="py-2">{{ itemOption.name }}</p>
-                            <p class="text-[12px] font-normal">
-                              {{ itemOption.description }}
-                            </p>
-                          </div>
-                          <div
-                            v-if="option.name === 'Tryout'"
-                            class="border-2 flex p-2 gap-5 w-[204px] h-[40px] absolute bottom-0 border-[#249CD9] rounded-lg"
-                          >
-                            <button class="text-[14px] text-[#249CD9]">
-                              Lihat Semua Program
-                            </button>
-                            <img
-                              class="w-[20px] h-[20px]"
-                              src="/lulus-murni/navbar/arrow.svg"
-                              alt="image"
-                            />
+                            <div
+                            class="px-[12px] lg:w-[190px] xl:w-[244px]"
+                              :class="option.name === 'Tryout' ? 'mb-[68px]' : ''"
+                              v-for="itemOption in option.option"
+                              :key="itemOption"
+                            >
+                              <img
+                                :src="`/lulus-murni-pages${itemOption.imageDesktop}`"
+                                :alt="itemOption.name"
+                              />
+                              <p class="py-2">{{ itemOption.name }}</p>
+                              <p class="text-[12px] font-normal">
+                                {{ itemOption.description }}
+                              </p>
+                            </div>
+                            <div
+                              v-if="option.name === 'Tryout'"
+                              class="border-2 flex p-2 gap-5 absolute bottom-0 border-[#249CD9] rounded-lg"
+                            >
+                              <button class="text-[14px] text-[#249CD9]">
+                                Lihat Semua Program
+                              </button>
+                              <img
+                                class="w-[20px] h-[20px]"
+                                src="/lulus-murni/navbar/arrow.svg"
+                                alt="image"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>

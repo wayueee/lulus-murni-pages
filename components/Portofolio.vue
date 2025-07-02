@@ -3,7 +3,7 @@
     <div
       class="hidden lg:block lg:h-[200px] xl:h-[270px] bg-cover overflow-hidden"
       style="
-        background-image: url('/lulus-murni/portofolio/background-portofolio-desktop.png');
+        background-image: url('/lulus-murni-pages/lulus-murni/portofolio/background-portofolio-desktop.png');
       "
     >
       <div class="bg-[#01699E] h-[270px] bg-opacity-80">
@@ -18,7 +18,7 @@
                 <img
                   class="xl:w-[89.51px] lg:w-[60px] my-2 h-auto mx-auto"
                   :class="item.name === '90%' ? 'ml-10' : ''"
-                  :src="item.img"
+                  :src="`/lulus-murni-pages${item.image}`"
                   :alt="item.name"
                 />
                 <div class="flex flex-col text-white text-center">
@@ -38,7 +38,7 @@
     <div
       class="w-full lg:hidden bg-cover h-[390px]"
       style="
-        background-image: url('/lulus-murni/portofolio/background-portofolio-mobile.png');
+        background-image: url('/lulus-murni-pages/lulus-murni/portofolio/background-portofolio-mobile.png');
       "
     >
       <div class="bg-[#01699E] h-[390px] grid grid-cols-2 bg-opacity-80">
@@ -50,7 +50,7 @@
           <div class="">
             <img
               class="w-[57.47px] my-2 mx-auto h-auto"
-              :src="item.img"
+              :src="`/lulus-murni-pages${item.image}`"
               :alt="item.name"
             />
             <div class="flex flex-col text-white">
@@ -70,22 +70,22 @@ export default {
     return {
       insight: [
         {
-          img: "/lulus-murni/portofolio/star.png",
+          image: "/lulus-murni/portofolio/star.png",
           name: "90%",
           title: "Tingkat Keberhasilan Alumni",
         },
         {
-          img: "/lulus-murni/portofolio/people.png",
+          image: "/lulus-murni/portofolio/people.png",
           name: "10.123K",
           title: "Total Peserta Tryout",
         },
         {
-          img: "/lulus-murni/portofolio/book.png",
+          image: "/lulus-murni/portofolio/book.png",
           name: "50",
           title: "Pilihan Paket Tryout",
         },
         {
-          img: "/lulus-murni/portofolio/verified.png",
+          image: "/lulus-murni/portofolio/verified.png",
           name: "Standar Sertifikasi Nasional",
           title: "Ujian Prediktif & Akurat",
         },

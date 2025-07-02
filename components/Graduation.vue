@@ -23,7 +23,7 @@
     />
     <div
       class="hidden md:block relative overflow-hidden w-full md:h-[200px] lg:h-[250px] xl:h-[330px] rounded-lg bg-cover"
-      style="background-image: url('/lulus-murni/graduation/mask-group.png')"
+      style="background-image: url('/lulus-murni-pages/lulus-murni/graduation/mask-group.png')"
     >
     <div class="absolute xl:w-[468px] lg:w-[400px] md:w-[320px] xl:bottom-5 -bottom-2 left-3">
         <h1 class="font-semibold text-[13px] lg:text-[18px] mb-2 ">

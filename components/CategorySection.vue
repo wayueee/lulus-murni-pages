@@ -43,7 +43,7 @@
             </h1>
             <img
               class="w-full h-auto"
-              :src="category.image"
+              :src="`/lulus-murni-pages${category.image}`"
               :alt="category.name"
             />
           </div>
@@ -57,7 +57,7 @@
                 v-for="type in category.types"
                 :key="type"
               >
-                <img :src="type.image" :alt="type.name" />
+                <img :src="`/lulus-murni-pages${type.image}`" :alt="type.name" />
                 <h1>{{ type.name }}</h1>
               </div>
             </div>
@@ -114,14 +114,14 @@
                             </div>
                             <img
                               class="my-3 w-full h-auto md:hidden"
-                              :src="category.description.image"
+                              :src="`/lulus-murni-pages${category.description.image}`"
                               :alt="category.name"
                             />
                           </div>
                           <div>
-                            <img
+                            <img 
                               class="my-3 w-full h-auto hidden md:block"
-                              :src="category.description.image"
+                              :src="`/lulus-murni-pages${category.description.image}`"
                               :alt="category.name"
                             />
                           </div>

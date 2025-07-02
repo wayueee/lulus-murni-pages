@@ -47,7 +47,7 @@
               <div class="mx-1" v-for="xPost in xPosts" :key="xPost">
                 <img
                   class="h-[210px] lg:h-[260px] xl:h-[320px]"
-                  :src="xPost"
+                  :src="`/lulus-murni-pages${xPost}`"
                   alt="icon-x"
                 />
               </div>
@@ -81,7 +81,7 @@
                 <div class="relative">
                   <img
                     class="h-[210px] lg:h-[260px] xl:h-[320px]"
-                    :src="tiktokPost"
+                    :src="`/lulus-murni-pages${tiktokPost}`"
                     alt="icon-x"
                   />
                   <div

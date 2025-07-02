@@ -1,26 +1,66 @@
 <template>
   <div class="container">
-    <h1 class="lg:text-[22px] text-[14px] md:text-[16px] mt-5 font-semibold">Kategori</h1>
-    <div class="flex flex-wrap gap-[12px] md:justify-normal justify-center  xl:gap-[20px] ">
-        <div class="xl:w-[265px] relative w-[158px] h-[255px] sm:w-[210px] lg:w-[220px] border-2 p-2 rounded-lg my-5 xl:h-[297px]" v-for="card in cards.slice(0, showCount)" :key="card">
-            <img :src="card.image" :alt="card.name">
-            <div class="py-[12px] lg:py-[16px]">
-                <h1 class="font-bold text-[12px] lg:text-14">{{ card.name }}</h1>
-                <div class="lg:flex mb-3 justify-between">
-                    <p class="text-[10px] font-light lg:text-[11px]">{{ card.paket }}</p>
-                    <p class="text-[11px] lg:text-[12px] text-[#0DBC16]">Mulai dari <span class="font-bold">{{ card.price }}</span></p>
-                </div>
-                <div class="flex my-1" v-for="benefit in card.benefits" :key="benefit">                  
-                    <img class="w-[14px] h-[14px] lg:w-[16px] lg:h-[16px] mr-1 rounded-lg border-1" src="/lulus-murni/category/ckeck-category.png" alt="check">
-                    <h1 class="text-[10px] font-semibold lg:text-[12px] ">{{ benefit }}</h1>
-                </div>
-                <button class="w-[140px] xl:w-[241px] absolute bottom-2 sm:static sm:w-[190px] lg:w-[200px] text-[14px] mt-1 xl:mt-3 rounded-lg h-[34px] lg:h-[30px] xl:h-[40px] font-semibold bg-[#249CD9] text-white">Lihat Tryout</button>
-            </div>
+    <h1
+      class="lg:text-[22px] text-[14px] md:text-[16px] mt-5 mb-2 font-semibold"
+    >
+      Kategori
+    </h1>
+    <div
+      class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-[12px] lg:gap-[16px] xl:gap-[20px]"
+    >
+      <div
+        class="xl:w-[265px] relative w-full h-auto  lg:w-[220px] border-2 p-2 rounded-lg xl:h-[297px]"
+        v-for="card in cards.slice(0, showCount)"
+        :key="card"
+      >
+        <img class="w-full h-auto" :src="`/lulus-murni-pages${card.image}`" :alt="card.name" />
+        <div class="pt-[12px] lg:py-[16px]">
+          <h1 class="font-bold text-[12px] lg:text-14">{{ card.name }}</h1>
+          <div class="lg:flex mb-3 justify-between">
+            <p class="text-[10px] font-light lg:text-[11px]">
+              {{ card.paket }}
+            </p>
+            <p class="text-[11px] lg:text-[12px] text-[#0DBC16]">
+              Mulai dari <span class="font-bold">{{ card.price }}</span>
+            </p>
+          </div>
+          <div
+            class="flex my-1"
+            v-for="benefit in card.benefits"
+            :key="benefit"
+          >
+            <img
+              class="w-[14px] h-[14px] lg:w-[16px] lg:h-[16px] mr-1 rounded-lg border-1"
+              src="/lulus-murni/category/ckeck-category.png"
+              alt="check"
+            />
+            <h1 class="text-[10px] font-semibold lg:text-[12px]">
+              {{ benefit }}
+            </h1>
+          </div>
+          <div>
+            <button
+              class="w-full  sm:w-full text-[14px] mt-1 xl:mt-3 rounded-lg h-[34px] lg:h-[30px] xl:h-[40px] font-semibold bg-[#249CD9] text-white"
+            >
+              Lihat Tryout
+            </button>
+          </div>
         </div>
+      </div>
     </div>
     <div class="flex justify-center my-3">
-        <button v-if="showCount < cards.length" @click="showCount = cards.length" class="text-[#249CD9] font-semibold text-[12px] lg:text-[14px]">Tampilkan semua </button>
-        <img class="w-[14px] lg:w-[20px] h-auto mx-1" src="/lulus-murni/category/chevron-up-line.png" alt="">
+      <button
+        v-if="showCount < cards.length"
+        @click="showCount = cards.length"
+        class="text-[#249CD9] font-semibold text-[12px] lg:text-[14px]"
+      >
+        Tampilkan semua
+      </button>
+      <img
+        class="w-[14px] lg:w-[20px] h-auto mx-1"
+        src="/lulus-murni/category/chevron-up-line.png"
+        alt=""
+      />
     </div>
   </div>
 </template>
@@ -29,7 +69,7 @@
 export default {
   data() {
     return {
-      showCount : 4,
+      showCount: 4,
       cards: [
         {
           image: "/lulus-murni/category/image-1.png",

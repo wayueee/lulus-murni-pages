@@ -11,7 +11,8 @@ export default defineNuxtConfig({
   },
   // Tambahkan base URL agar cocok dengan GitHub Pages
   app: {
-    baseURL: '/lulus-murni-pages/' // Ganti <nama-repo> dengan nama repositori GitHub kamu
+    baseURL: '/lulus-murni-pages/',
+        buildAssetsDir: 'assets' // Ganti <nama-repo> dengan nama repositori GitHub kamu
   },
 
   // Tambahkan preset static agar build ke static
